@@ -91,7 +91,7 @@ for files in filesToUpload:
     share = driver.find_element(By.XPATH, "//*[contains(text(), 'Share')]")
     share.click()
 
-    sleep(5)
+    sleep(10)
 
     pog.press("escape")
 
