@@ -1,5 +1,7 @@
 # Well, this answers the question, "Why didn't the instagrabbers automate their instagram posts?", because it's ducking painful to do
 
+hashtags = "#wholesomememes #wholesome #wholesomegfmemes #wholesomememe #wholesomebfmemes #mood #cutememe #lovememes #memes #softmemes #loveandaffectionmemes #loveandaffection #purememes #nsfwtextposts #wholesomeness #couplememes #explore #crush #kinkymemes #romanticmemes #positivememes #crushmemes #couple #feelgood #relationshipmemes #sendthistoyourboyfriend #sendthistoyourgirlfriend #sendthistoyourcrush #relationships #couplegoals #memes #meme #wholesomememes #wholesomememe #wholesomemes #wholesomeme"
+
 import os
 
 filesToUpload = []
@@ -19,14 +21,14 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import pyautogui as pog
 
-driver = webdriver.Chrome("C:\\Users\\take2\\Desktop\\chromedriver_win32 (2)\\chromedriver.exe")
+driver = webdriver.Chrome("chromedriver.exe")
 driver.get("https://www.instagram.com/")
 
 username = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "username")))
-username.send_keys("lmao@gmail.com")
+username.send_keys("gjashgdhasgdhasd@gmail.com")
 
 password = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "password")))
-password.send_keys("sendhelp")
+password.send_keys("helpmeplease")
 
 i = 0
 for element in driver.find_elements(By.TAG_NAME, "button"):
@@ -47,13 +49,14 @@ notifications.click()
 
 # LOGIN FREAKING COMPLETE!!! LET'S GOOOOOOOOOOOOOOO!!
 
-print("a")
-print(filesToUpload)
-print("b")
+pog.press("esc")
+
+driver.get("https://www.instagram.com/wholesomealert/")
+sleep(4.5)
+
+filesToUpload.append("He loved it.png")
 
 for files in filesToUpload:
-    sleep(2)
-
     uploaddiv = driver.find_element(By.CLASS_NAME, "_acub")
     upload = uploaddiv.find_element(By.TAG_NAME, "button")
     upload.click()
@@ -63,20 +66,14 @@ for files in filesToUpload:
 
     sleep(2)
 
-    pog.hotkey("ctrl", "l")
-    pog.typewrite(r"C:\Users\take2\Documents\The Reddit Heist")
-    pog.press("enter")
-
-    pog.press("tab")
-    pog.press("tab")
-    pog.press("tab")
-    pog.press("tab")
-    pog.press("tab")
-
-    pog.typewrite(files)
+    pog.typewrite(os.getcwd() + "\\" + files)
     pog.press("enter")
 
     sleep(2)
+
+    driver.find_element(By.XPATH, "//div[@class='_ab8w  _ab94 _ab95 _ab9f _ab9m _ab9p _abcm']").find_element(By.TAG_NAME, "button").click()
+    sleep(0.5)
+    driver.find_element(By.XPATH, "//*[contains(text(), 'Original')]").click()
 
     next1 = driver.find_element(By.XPATH, "//*[contains(text(), 'Next')]")
     next1.click()
@@ -87,6 +84,15 @@ for files in filesToUpload:
     next2.click()
 
     sleep(2)
+
+    textarea = driver.find_element(By.TAG_NAME, "textarea")
+    textarea.click()
+
+    sleep(1)
+
+    pog.typewrite(hashtags)
+
+    sleep(10)
 
     share = driver.find_element(By.XPATH, "//*[contains(text(), 'Share')]")
     share.click()
