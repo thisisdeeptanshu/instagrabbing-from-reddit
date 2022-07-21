@@ -1,6 +1,6 @@
 # Well, this answers the question, "Why didn't the instagrabbers automate their instagram posts?", because it's ducking painful to do
 
-hashtags = "#wholesomememes #wholesome #wholesomegfmemes #wholesomememe #wholesomebfmemes #mood #cutememe #lovememes #memes #softmemes #loveandaffectionmemes #loveandaffection #purememes #nsfwtextposts #wholesomeness #couplememes #explore #crush #kinkymemes #romanticmemes #positivememes #crushmemes #couple #feelgood #relationshipmemes #sendthistoyourboyfriend #sendthistoyourgirlfriend #sendthistoyourcrush #relationships #couplegoals #memes #meme #wholesomememes #wholesomememe #wholesomemes #wholesomeme"
+hashtags = "#wholesomememes #wholesome #wholesomegfmemes #wholesomememe #wholesomebfmemes #mood #cutememe #lovememes #memes #softmemes #loveandaffectionmemes #loveandaffection #purememes #wholesomeness #couplememes #crush #positivememes #crushmemes #couple #feelgood #relationshipmemes #sendthistoyourboyfriend #sendthistoyourgirlfriend #sendthistoyourcrush #relationships #couplegoals #memes #meme"
 
 import os
 
@@ -25,10 +25,10 @@ driver = webdriver.Chrome("chromedriver.exe")
 driver.get("https://www.instagram.com/")
 
 username = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "username")))
-username.send_keys("gjashgdhasgdhasd@gmail.com")
+username.send_keys("theofficialepicgames")
 
 password = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.NAME, "password")))
-password.send_keys("helpmeplease")
+password.send_keys("money")
 
 i = 0
 for element in driver.find_elements(By.TAG_NAME, "button"):
@@ -51,10 +51,8 @@ notifications.click()
 
 pog.press("esc")
 
-driver.get("https://www.instagram.com/wholesomealert/")
+driver.get("https://www.instagram.com/theofficialepicgames/")
 sleep(4.5)
-
-filesToUpload.append("He loved it.png")
 
 for files in filesToUpload:
     uploaddiv = driver.find_element(By.CLASS_NAME, "_acub")
@@ -87,6 +85,13 @@ for files in filesToUpload:
 
     textarea = driver.find_element(By.TAG_NAME, "textarea")
     textarea.click()
+
+    sleep(1)
+
+    pog.typewrite("Tag your Bestie!")
+    pog.press("enter")
+    pog.typewrite("Follow for more!")
+    pog.press("enter")
 
     sleep(1)
 

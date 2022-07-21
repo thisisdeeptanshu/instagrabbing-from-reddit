@@ -5,17 +5,6 @@ import pyautogui as pog
 
 container = "rpBJOHq2PR60pnwJlUyP0" # Container name for all the memes and stuff
 
-websites = [
-    "https://reddit.com/r/wholesomeanimemes",
-    "https://reddit.com/r/wholesomememes"
-    # "https://reddit.com/r/memes",
-    # "https://reddit.com/r/meme",
-    # "https://reddit.com/r/dankmemes",
-    # "https://reddit.com/r/animemes",
-    # "https://reddit.com/r/goodanimemes",
-    # "https://reddit.com/r/funny"
-]
-
 def convert(name):
     _name = ""
     alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -23,15 +12,15 @@ def convert(name):
         if i in alphabet: _name += i
     return _name
 
-for website in websites:
-    driver = webdriver.Chrome("chromedriver.exe")
-    driver.get(website)
+driver = webdriver.Chrome("chromedriver.exe")
+driver.get("https://reddit.com/r/memes")
 
-    time.sleep(10)
-    pog.press("esc")
-    pog.press("esc")
-    pog.press("esc")
+time.sleep(10)
+pog.press("esc")
+pog.press("esc")
+pog.press("esc")
 
+def iwannadie():
     # Create a collection
     i = 1
     # Get first level child elements
@@ -50,5 +39,10 @@ for website in websites:
                 # Being short was never a bad thing, until now
                 if elmnt.size["height"] > 99 and elmnt.size["width"] > 99:
                     elmnt.screenshot(f"{convert(h3h3)}.png") # This method, it puts a smile on my face
-    driver.close()
-print("\n\nHeist Complete")
+while True:
+    iwannadie()
+    pog.keyDown("space")
+    time.sleep(2)
+    pog.keyUp("space")
+    time.sleep(10)
+driver.close()
